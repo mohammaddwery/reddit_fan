@@ -5,5 +5,5 @@ String getTranslationFilePath({
   String? packageName,
 }) =>
     packageName != null
-        ? 'packages/$packageName/assets/languages/${locale.languageCode}.json'
-        : 'assets/languages/${locale.languageCode}.json';
+        ? 'packages/$packageName/assets/subtitles/${locale.languageCode}.json'
+        : 'assets/subtitles/${locale.languageCode}.json';

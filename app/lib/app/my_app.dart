@@ -1,5 +1,6 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_presentation/shared_presentation.dart';
 
 class MyApp extends StatelessWidget {
   final List<LocalizationsDelegate> localeDelegates;
@@ -17,15 +18,12 @@ class MyApp extends StatelessWidget {
           settings: settings,
           routes: routes,
         ),
-        /// Temporary home page
-        // TODO: Remove this later
-        home: const Scaffold(
-          body: Center(
-            child: Text('Home'),
-          ),
+        theme: ThemeData(
+          fontFamily: AppFonts.fontFamily,
+
         ),
         localeResolutionCallback: localeResolutionCallback,
-        supportedLocales: AppConstants.appSupportedLocales,
+        supportedLocales: appSupportedLocales,
         localizationsDelegates: localeDelegates,
         debugShowCheckedModeBanner: false,
       );

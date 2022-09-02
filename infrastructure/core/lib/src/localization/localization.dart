@@ -20,19 +20,19 @@ class BaseLocalization {
   static const String LOG_TAG = 'BaseLocalization';
   
   /// Initialize the locale-specific strings.
-  /// It searchs for a string file in the
+  /// It searches for a string file in the
   /// provided appPathFunction and set them into the Intl.defaultLocale.
   Future<void> load() async {
     try {
       _debugPrint('Loading locale: $locale');
       final data = await rootBundle.loadString(appPathFunction(locale));
-      final Map<String, dynamic> _subtitles = json.decode(data);
+      // final Map<String, dynamic> _subtitles = json.decode(data).map((element) => element.value.toString());
+      json.decode(data).forEach((String key, dynamic value) {
+        _subtitles[key] = value.toString();
+      });
       _debugPrint('Loaded ${_subtitles.keys.length} keys');
 
-      final localeName = locale.countryCode?.isEmpty == null
-          ? locale.languageCode
-          : locale.toString();
-      final canonicalLocaleName = Intl.canonicalizedLocale(localeName);
+      final canonicalLocaleName = Intl.canonicalizedLocale(locale.languageCode);
       Intl.defaultLocale = canonicalLocaleName;
     } catch (exception) {
       _debugPrint(exception.toString());
@@ -42,9 +42,8 @@ class BaseLocalization {
   String translate(String key,) {
     String? message = _loadMessage(key);
 
-
     if (message == null) {
-      _debugPrint('WARN [LOCALIZATION]: Could not find valid localization string for key $key, $locale');
+      _debugPrint('WARNING [LOCALIZATION]: Could not find valid localization string for key $key in locale: $locale');
       return key;
     }
 

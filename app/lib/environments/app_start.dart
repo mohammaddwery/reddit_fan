@@ -3,6 +3,7 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:posts/posts.dart';
 import '../app/my_app.dart';
 import '../di/app_component.dart';
 import '../resolvers/app_resolver.dart';
@@ -17,7 +18,7 @@ abstract class AppStart {
     AppResolver(),
 
     // Features
-
+    PostsResolver(),
   ];
 
   AppStart(this.buildConfig);
