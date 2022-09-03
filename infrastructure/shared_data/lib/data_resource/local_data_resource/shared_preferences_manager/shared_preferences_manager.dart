@@ -1,5 +1,5 @@
 
-mixin SharedPreferencesManager {
+abstract class SharedPreferencesManager {
   Future<bool> save(String key, String data);
   dynamic fetchDecodedJson(String key);
   String fetchString(String key);

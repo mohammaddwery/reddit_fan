@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:posts/src/core/posts_constants.dart';
 import 'package:posts/src/presentation/localization/posts_localization.dart';
 import 'package:shared_presentation/shared_presentation.dart';
 
@@ -20,7 +21,7 @@ class PostScreenTitleWidget extends StatelessWidget {
         Text(
           PostsLocalization.of(context).translate(titleKey),
           style: TextStyle(
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w500,
             fontSize: AppFonts.getSize24(context),
             color: titleColor,
           ),
@@ -28,7 +29,7 @@ class PostScreenTitleWidget extends StatelessWidget {
         const SizedBox(width: 12,),
         ImageWidget(
           url: iconUrl,
-          packageName: 'posts',
+          packageName: PostsConstants.packageName,
           width: 30,
           height: 30,
           fit: BoxFit.contain,

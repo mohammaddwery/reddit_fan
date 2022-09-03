@@ -1,5 +1,6 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:posts/src/data/models/post/post.dart';
 import 'package:posts/src/presentation/helpers/posts_icons.dart';
 import 'package:posts/src/presentation/screens/posts/posts_screen_bloc.dart';
@@ -29,17 +30,25 @@ class _PostsScreenState extends BaseWidgetState<PostsScreen> {
 
   @override
   Widget buildContent(BuildContext context) {
-    return BasePostsScreen(
-      appbarActions: const [ DisplayModeSwitchButton() ],
-      screenTitleWidget: PostScreenTitleWidget(
-        titleKey: PostsSubtitlesKeys.hotPosts,
-        titleColor: Theme.of(context).colorScheme.secondary,
-        iconUrl: PostsIcons.icFlame,
-      ),
-      contentWidget: PagingResultsListingWidget<Post>(
-        bloc: postsScreenBloc,
-        listItemBuilder: (post) => PostCard(post),
+    return WillPopScope(
+      onWillPop: _onWillPop,
+      child: BasePostsScreen(
+        appbarActions: const [ DisplayModeSwitchButton() ],
+        screenTitleWidget: PostScreenTitleWidget(
+          titleKey: PostsSubtitlesKeys.hotPosts,
+          titleColor: Theme.of(context).colorScheme.secondary,
+          iconUrl: PostsIcons.icFlame,
+        ),
+        contentWidget: PagingResultsListingWidget<Post>(
+          bloc: postsScreenBloc,
+          listItemBuilder: (post) => PostCard(post),
+        ),
       ),
     );
+  }
+
+  Future<bool> _onWillPop() {
+    SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+    return Future.value(false);
   }
 }

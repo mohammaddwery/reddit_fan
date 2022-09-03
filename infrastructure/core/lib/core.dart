@@ -11,3 +11,5 @@ export 'src/localization/resolution_callback.dart';
 export 'src/modules/feature_resolver.dart';
 export 'src/modules/injection_module.dart';
 export 'src/modules/router_module.dart';
+export 'src/adapters/adapters.dart';
+export 'src/enum/enum.dart';

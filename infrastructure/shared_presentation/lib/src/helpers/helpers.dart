@@ -1,1 +1,1 @@
-export 'app_fonts.dart';
+export '../styles/app_fonts.dart';
