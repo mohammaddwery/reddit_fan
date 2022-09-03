@@ -2,6 +2,9 @@
   "reddit": "Reddit",
   "hot_posts": "Hot Posts",
   "no_more_results_found": "Sorry, no more results found",
+  "something_went_wrong": "Sorry, something went wrong",
   "no_results_found": "Sorry, No results found",
+  "connection_error": "Sorry, connection error",
+  "timeout": "Sorry, timeout!",
   "published": "Published by"
 }

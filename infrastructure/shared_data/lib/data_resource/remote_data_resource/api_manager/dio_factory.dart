@@ -14,10 +14,9 @@ class DioFactory {
     ));
   }
 
-  Dio provideDio({BaseOptions? options, Interceptor? interceptor}) {
-    Dio dio = Dio(options);
+  Dio provideDio({required String baseUrl, Interceptor? interceptor}) {
+    Dio dio = Dio()..options.baseUrl = baseUrl;
     if(interceptor!=null) dio.interceptors.add(interceptor);
-    _initDioWithLogInterceptor(dio);
     return dio;
   }
 }

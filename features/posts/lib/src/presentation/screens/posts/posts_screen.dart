@@ -29,6 +29,12 @@ class _PostsScreenState extends BaseWidgetState<PostsScreen> {
   }
 
   @override
+  void dispose() {
+    postsScreenBloc.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget buildContent(BuildContext context) {
     return WillPopScope(
       onWillPop: _onWillPop,

@@ -20,7 +20,7 @@ abstract class Injector {
 
   void registerFactoryParam<T extends Object>(T Function(dynamic param1, dynamic param2) function);
 
-  T get<T extends Object>();
+  T get<T extends Object>({dynamic param1, dynamic param2});
 
   void unregister<T extends Object>();
 }

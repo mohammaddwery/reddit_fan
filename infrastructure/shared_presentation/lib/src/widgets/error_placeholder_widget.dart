@@ -14,7 +14,7 @@ class ErrorPlaceholderWidget extends StatelessWidget {
           message,
           style: TextStyle(
             color: Theme.of(context).textTheme.bodyMedium?.color,
-            fontSize: Theme.of(context).textTheme.bodyMedium?.fontSize??AppFonts.getSize18(context),
+            fontSize: AppFonts.getSize18(context),
             fontWeight: FontWeight.w400,
             height: 1.0,
           ),

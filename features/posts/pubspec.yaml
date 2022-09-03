@@ -18,6 +18,8 @@ dependencies:
     path: ../../infrastructure/core/
   shared_presentation:
     path: ../../infrastructure/shared_presentation/
+  shared_data:
+    path: ../../infrastructure/shared_data/
 
 dev_dependencies:
   flutter_test:

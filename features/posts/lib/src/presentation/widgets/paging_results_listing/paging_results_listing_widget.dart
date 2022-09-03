@@ -95,11 +95,11 @@ class _PagingResultsListingWidgetState<T> extends BaseWidgetState<PagingResultsL
 
   Widget buildFailedState(UiState<List<T>> uiState) {
     if (bloc.getPagingListItems()?.data?.isEmpty ?? true) {
-      return ErrorPlaceholderWidget(uiState.message!,);
+      return ErrorPlaceholderWidget(postsLocal.translate(uiState.message!),);
     } else {
       return buildList(
         items: uiState.data!,
-        bottomExtraWidget: ExtraListItemWidget(uiState.message!),
+        bottomExtraWidget: ExtraListItemWidget(postsLocal.translate(uiState.message!)),
       );
     }
   }

@@ -13,6 +13,10 @@ class AppInjectionModule implements InjectionModule {
 
     injector
         ..registerSingleton<BuildConfig>(buildConfig)
+        ..registerSingleton<DioFactory>(DioFactory())
+        ..registerFactoryParam((dio, _) => DioApiManager(
+          dio: dio,
+        ))
         ..registerSingleton<SharedPreferencesManager>(AppSharedPreferencesManager(
           preferences: preferences,
         ))

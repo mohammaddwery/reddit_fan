@@ -32,7 +32,8 @@ class AppInjector implements Injector {
   }
 
   @override
-  T get<T extends Object>() => _getIt.get<T>();
+  T get<T extends Object>({dynamic param1, dynamic param2}) =>
+      _getIt.get<T>(param1: param1, param2: param2,);
 
   @override
   void unregister<T extends Object>() => _getIt.unregister<T>();

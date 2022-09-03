@@ -21,9 +21,9 @@ class ApiErrorHandler {
     }
   }
 
-  // TODO: Need checking with returned server errors
   static _handleApiResponseError(Response errorResponse) {
-    throw const FormatException(AppConstants.generalErrorMessageKey);
+    final String errorMessage = errorResponse.data['message']??AppConstants.generalErrorMessageKey;
+    throw FormatException(errorMessage);
   }
 
 }

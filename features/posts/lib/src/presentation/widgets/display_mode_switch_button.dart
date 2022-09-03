@@ -25,6 +25,7 @@ class _DisplayModeSwitchButtonState extends BaseWidgetState<DisplayModeSwitchBut
   @override
   Widget buildContent(BuildContext context) {
     return StreamBuilder<AppThemeMode>(
+      initialData: adaptAppMaterialThemeModeToThemeMode(),
       stream: appThemeModeBloc.appThemeModeStream,
       builder: (context, themeModeSnapshot) {
         bool isDark = themeModeSnapshot.data! == AppThemeMode.dark;
