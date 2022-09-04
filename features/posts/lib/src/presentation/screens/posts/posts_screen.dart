@@ -1,3 +1,4 @@
+import 'package:common_dependencies/common_dependencies.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,6 +23,7 @@ class PostsScreen extends StatefulWidget {
 class _PostsScreenState extends BaseWidgetState<PostsScreen> {
 
   late PostsScreenBloc postsScreenBloc = AppInjector.I.get();
+  late PostsNavigator postsNavigator = AppInjector.I.get();
 
   @override
   void initState() {
@@ -47,7 +49,10 @@ class _PostsScreenState extends BaseWidgetState<PostsScreen> {
         ),
         contentWidget: PagingResultsListingWidget<Post>(
           bloc: postsScreenBloc,
-          listItemBuilder: (post) => PostCard(post),
+          listItemBuilder: (post) => GestureDetector(
+            onTap: () => postsNavigator.navigateToDetails(context, post),
+            child: PostCard(post),
+          ),
         ),
       ),
     );

@@ -11,6 +11,7 @@ List<Post> adaptJsonToPosts(json) => List<Post>.from(json.map((x) => adaptJsonTo
 Post adaptJsonToPost(json) => Post(
   authorName: json['author_fullname']??'',
   name: json['name']??'',
+  id: (json['name']??'').toString().split('_').last,
   publishedAt: DateTime.fromMillisecondsSinceEpoch(double.parse((json['created_utc']??0.0).toString()).toInt()* 1000, isUtc: true),
   body: json['selftext']!='' ? json['selftext'] : (json['title']??''),
   commentsCount: json['num_comments']??0,

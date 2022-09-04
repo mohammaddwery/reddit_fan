@@ -1,6 +1,6 @@
 import 'package:posts/src/core/posts_constants.dart';
-import 'package:posts/src/data/data_resource/remote_data_resource/post_endpoints.dart';
 import 'package:shared_data/shared_data.dart';
+import 'post_endpoints.dart';
 
 class PostApiProvider {
   final ApiManager _apiManager;

@@ -18,7 +18,7 @@ class AppThemeFactory {
     primaryColor: AppColors.primaryDark,
     brightness: Brightness.dark,
     backgroundColor:  AppColors.backgroundDark,
-    dividerColor: Colors.black12,
+    dividerColor: AppColors.dividerColor,
     textTheme: const TextTheme(
       bodyMedium: TextStyle(
         color: Colors.white
@@ -47,7 +47,7 @@ class AppThemeFactory {
     primaryColor: AppColors.primaryLight,
     brightness: Brightness.light,
     backgroundColor: AppColors.backgroundLight,
-    dividerColor: Colors.white54,
+    dividerColor: AppColors.dividerColor,
     textTheme: const TextTheme(
       bodyMedium: TextStyle(
           color: Colors.black

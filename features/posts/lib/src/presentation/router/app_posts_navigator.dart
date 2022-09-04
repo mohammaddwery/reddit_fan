@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 class AppPostsNavigator with AppNavigator implements PostsNavigator {
   @override
-  void navigateToDetails(BuildContext context, {String? anchor}) => navigateTo(
+  void navigateToDetails<A>(BuildContext context, A arguments,) => navigateTo(
     context: context,
     routeName: PostsRoutes.details,
-    anchor: anchor,
+    arguments: arguments,
   );
 }

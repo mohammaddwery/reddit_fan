@@ -9,6 +9,7 @@ class AppColors {
   static const Color secondaryBody = Color(0xFF989898);
   static const Color primaryDark = Color(0xFF414141);
   static const Color cardLight = Color(0xFF414141);
+  static const Color dividerColor = Color(0xFF9C9C9C);
   static const Color primaryLight = Color.fromARGB(255, 43, 87, 147);
 
 

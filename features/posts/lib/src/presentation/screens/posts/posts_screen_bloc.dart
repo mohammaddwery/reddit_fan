@@ -1,7 +1,7 @@
 import 'package:posts/src/core/posts_constants.dart';
 import 'package:posts/src/presentation/widgets/paging_results_listing/base_paging_results_listing_widget_bloc.dart';
 import '../../../data/models/post/post.dart';
-import '../../../domain/use_case/posts/fetch_posts_use_case.dart';
+import '../../../domain/use_case/post/fetch_posts_use_case.dart';
 
 class PostsScreenBloc extends BasePagingResultsListingWidgetBloc<Post> {
   final FetchPostsUseCase _fetchPostsUseCase;

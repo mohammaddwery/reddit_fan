@@ -8,5 +8,5 @@ class PostsRoutes {
 }
 
 abstract class PostsNavigator {
-  void navigateToDetails(BuildContext context, {String? anchor});
+  void navigateToDetails<A>(BuildContext context, A argument);
 }
